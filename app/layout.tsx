@@ -12,8 +12,9 @@ export const metadata: Metadata = {
   description: "Müasir və innovativ həllər təqdim edirik.",
 };
 
-import { MouseFollower } from "@/components/MouseFollower";
-import ScrollToTop from "@/components/ScrollToTop";
+import dynamic from "next/dynamic";
+const MouseFollower = dynamic(() => import("@/components/MouseFollower").then(mod => mod.MouseFollower), { ssr: false });
+const ScrollToTop = dynamic(() => import("@/components/ScrollToTop"), { ssr: false });
 
 export default function RootLayout({
   children,

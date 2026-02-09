@@ -28,7 +28,7 @@ const ProjectCard = ({ project, onOpen }: { project: Project, onOpen: (p: Projec
         >
             <div className="aspect-[16/10] w-full overflow-hidden relative cursor-pointer" onClick={() => onOpen(project)}>
                 <motion.div
-                    className="absolute inset-0"
+                    className="absolute inset-0 will-change-transform"
                     style={{
                         scale: imageScale,
                         y: imageY
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, onOpen }: { project: Project, onOpen: (p: Projec
                         alt={project.title}
                         fill
                         className="object-cover opacity-80"
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-80 transition-opacity group-hover:opacity-40" />
@@ -103,16 +103,16 @@ const Projects = () => {
             </div>
 
             {/* Parallax Code Elements */}
-            <motion.div style={{ y: yCode1 }} className="absolute top-20 right-[10%] text-accent/20 font-mono text-2xl pointer-events-none hidden lg:block">
+            <motion.div style={{ y: yCode1 }} className="absolute top-20 right-[10%] text-accent/20 font-mono text-2xl pointer-events-none hidden lg:block will-change-transform">
                 {"<div>"}
             </motion.div>
-            <motion.div style={{ y: yCode2 }} className="absolute top-[40%] left-[5%] text-foreground/10 font-mono text-xl pointer-events-none hidden lg:block">
+            <motion.div style={{ y: yCode2 }} className="absolute top-[40%] left-[5%] text-foreground/10 font-mono text-xl pointer-events-none hidden lg:block will-change-transform">
                 npm install framer-motion
             </motion.div>
-            <motion.div style={{ y: yCode3 }} className="absolute bottom-20 right-[15%] text-accent-secondary/20 font-mono text-3xl pointer-events-none hidden lg:block">
+            <motion.div style={{ y: yCode3 }} className="absolute bottom-20 right-[15%] text-accent-secondary/20 font-mono text-3xl pointer-events-none hidden lg:block will-change-transform">
                 {"{ ...portfolio }"}
             </motion.div>
-            <motion.div style={{ y: yCode1 }} className="absolute top-[60%] right-[5%] text-foreground/10 font-mono text-lg pointer-events-none hidden lg:block">
+            <motion.div style={{ y: yCode1 }} className="absolute top-[60%] right-[5%] text-foreground/10 font-mono text-lg pointer-events-none hidden lg:block will-change-transform">
                 const [state, setState] = useState();
             </motion.div>
 

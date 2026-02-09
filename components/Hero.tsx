@@ -21,11 +21,11 @@ const Hero = () => {
             {/* Parallax Background blobs */}
             <motion.div
                 style={{ y: yBackground }}
-                className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-accent/20 blur-[120px]"
+                className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-accent/20 blur-[120px] will-change-transform"
             />
             <motion.div
                 style={{ y: yBackground }}
-                className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-accent-secondary/20 blur-[120px]"
+                className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-accent-secondary/20 blur-[120px] will-change-transform"
             />
 
             <div className="container mx-auto px-6 relative z-10 text-center">

@@ -59,7 +59,7 @@ const About = () => {
                             {/* This would be an image, using a placeholder gradient for now */}
                             <div className="h-full w-full bg-gradient-to-br from-accent/20 to-accent-secondary/20 flex items-center justify-center p-12">
                                 <div className="text-center">
-                                    <div className="relative h-48 w-48 mx-auto mb-6 transition-all hover:scale-105 duration-700">
+                                    <div className="relative h-48 w-48 mx-auto mb-6 transition-all hover:scale-105 duration-700 will-change-transform">
                                         <Image
                                             src="/logo.png"
                                             alt="NARİNCİ Logo"
@@ -75,7 +75,7 @@ const About = () => {
                         {/* Floating decoration with parallax */}
                         <motion.div
                             style={{ y: yFloating }}
-                            className="absolute -bottom-10 -right-10 h-40 w-40 glass rounded-2xl p-6 hidden md:block z-20 shadow-2xl"
+                            className="absolute -bottom-10 -right-10 h-40 w-40 glass rounded-2xl p-6 hidden md:block z-20 shadow-2xl will-change-transform"
                         >
                             <span className="text-4xl font-bold text-accent">
                                 <Counter value="5+" />

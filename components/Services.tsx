@@ -99,7 +99,7 @@ const Services = () => {
                             </div>
 
                             {/* Decorative background element */}
-                            <div className="absolute -right-4 -bottom-4 h-24 w-24 rounded-full bg-accent/5 blur-3xl group-hover:bg-accent/10 transition-colors" />
+                            <div className="absolute -right-4 -bottom-4 h-24 w-24 rounded-full bg-accent/5 blur-3xl group-hover:bg-accent/10 transition-colors will-change-transform" />
                         </motion.div>
                     ))}
                 </div>

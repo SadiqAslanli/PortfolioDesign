@@ -30,7 +30,7 @@ export const MouseFollower = () => {
                     x: springX,
                     y: springY,
                 }}
-                className="absolute h-[800px] w-[800px] -ml-[400px] -mt-[400px] rounded-full bg-accent/20 blur-[130px]"
+                className="absolute h-[800px] w-[800px] -ml-[400px] -mt-[400px] rounded-full bg-accent/20 blur-[130px] will-change-transform"
             />
             {/* Core vibrant Glow */}
             <motion.div
@@ -38,7 +38,7 @@ export const MouseFollower = () => {
                     x: springX,
                     y: springY,
                 }}
-                className="absolute h-[400px] w-[400px] -ml-[200px] -mt-[200px] rounded-full bg-accent/30 blur-[90px]"
+                className="absolute h-[400px] w-[400px] -ml-[200px] -mt-[200px] rounded-full bg-accent/30 blur-[90px] will-change-transform"
             />
         </div>
     );
