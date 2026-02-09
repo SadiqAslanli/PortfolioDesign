@@ -30,8 +30,8 @@ const ProjectCard = ({ project, onOpen }: { project: Project, onOpen: (p: Projec
                 <motion.div
                     className="absolute inset-0 will-change-transform"
                     style={{
-                        scale: imageScale,
-                        y: imageY
+                        scale: typeof window !== 'undefined' && window.innerWidth > 768 ? imageScale : 1,
+                        y: typeof window !== 'undefined' && window.innerWidth > 768 ? imageY : 0
                     }}
                 >
                     <Image
@@ -158,7 +158,7 @@ const Projects = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedProject(null)}
-                            className="absolute inset-0 bg-background/80 backdrop-blur-xl"
+                            className="absolute inset-0 bg-background/80 backdrop-blur-md md:backdrop-blur-xl"
                         />
                         <motion.div
                             layoutId={selectedProject.title}

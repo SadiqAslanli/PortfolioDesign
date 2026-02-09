@@ -30,9 +30,9 @@ export default function Home() {
       </div>
       <Footer />
 
-      {/* Static noise texture for premium feel - Optimized with hardware acceleration */}
+      {/* Static noise texture for premium feel - Optimized: Desktop only to save mobile performance */}
       <div
-        className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03] will-change-transform transform-gpu"
+        className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03] will-change-transform transform-gpu hidden lg:block"
         style={{
           backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')",
           backfaceVisibility: "hidden"

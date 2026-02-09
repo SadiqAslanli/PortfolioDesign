@@ -72,9 +72,9 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* Floating decoration with parallax */}
+                        {/* Floating decoration with parallax - Disabled on mobile for performance */}
                         <motion.div
-                            style={{ y: yFloating }}
+                            style={{ y: typeof window !== 'undefined' && window.innerWidth > 768 ? yFloating : 0 }}
                             className="absolute -bottom-10 -right-10 h-40 w-40 glass rounded-2xl p-6 hidden md:block z-20 shadow-2xl will-change-transform"
                         >
                             <span className="text-4xl font-bold text-accent">

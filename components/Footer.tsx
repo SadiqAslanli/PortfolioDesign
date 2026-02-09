@@ -58,7 +58,7 @@ const Footer = () => {
         <footer className="relative overflow-hidden bg-background border-t border-foreground/5">
             {/* Background gradient decoration */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-accent/[0.05] pointer-events-none" />
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[80px] md:blur-[150px] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Main Footer Content */}

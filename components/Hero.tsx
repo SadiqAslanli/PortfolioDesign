@@ -18,14 +18,14 @@ const Hero = () => {
 
     return (
         <section ref={containerRef} id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden py-24 w-full">
-            {/* Parallax Background blobs */}
+            {/* Parallax Background blobs - Optimized for mobile */}
             <motion.div
-                style={{ y: yBackground }}
-                className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-accent/20 blur-[120px] will-change-transform"
+                style={{ y: typeof window !== 'undefined' && window.innerWidth > 768 ? yBackground : 0 }}
+                className="absolute top-1/4 -left-20 h-64 w-64 md:h-96 md:w-96 rounded-full bg-accent/20 blur-[60px] md:blur-[120px] will-change-transform"
             />
             <motion.div
-                style={{ y: yBackground }}
-                className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-accent-secondary/20 blur-[120px] will-change-transform"
+                style={{ y: typeof window !== 'undefined' && window.innerWidth > 768 ? yBackground : 0 }}
+                className="absolute bottom-1/4 -right-20 h-64 w-64 md:h-96 md:w-96 rounded-full bg-accent-secondary/20 blur-[60px] md:blur-[120px] will-change-transform"
             />
 
             <div className="container mx-auto px-6 relative z-10 text-center">

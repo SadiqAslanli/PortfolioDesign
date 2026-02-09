@@ -23,7 +23,7 @@ export const MouseFollower = () => {
     }, [mouseX, mouseY]);
 
     return (
-        <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden">
+        <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden hidden lg:block">
             {/* Primary soft Glow */}
             <motion.div
                 style={{

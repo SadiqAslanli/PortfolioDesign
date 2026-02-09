@@ -114,7 +114,7 @@ const Services = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedService(null)}
-                            className="absolute inset-0 bg-background/80 backdrop-blur-2xl"
+                            className="absolute inset-0 bg-background/80 backdrop-blur-md md:backdrop-blur-2xl"
                         />
                         <motion.div
                             layoutId={`service-${selectedService.title}`}
