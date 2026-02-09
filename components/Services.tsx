@@ -4,7 +4,15 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Palette, Layout, Film, Globe, Smartphone, Rocket, X, ChevronRight } from "lucide-react";
 
-const services = [
+interface Service {
+    title: string;
+    description: string;
+    image: string;
+    icon: React.ElementType;
+    color: string;
+}
+
+const services: Service[] = [
     {
         title: "Brend & Qrafik Dizayn",
         description: "Brendinizin vizual kimliyini yaradan kreativ qrafik həllər, loqo dizaynı və çap materialları.",
@@ -48,13 +56,6 @@ const services = [
         color: "#6366f1",
     },
 ];
-interface Service {
-    title: string;
-    description: string;
-    image: string;
-    icon: any;
-    color: string;
-}
 
 const Services = () => {
     const [selectedService, setSelectedService] = useState<Service | null>(null);

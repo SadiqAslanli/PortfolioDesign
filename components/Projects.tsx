@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { projects, type Project } from "@/data/projects";
 
-const ProjectCard = ({ project, index, onOpen }: { project: Project, index: number, onOpen: (p: Project) => void }) => {
+const ProjectCard = ({ project, onOpen }: { project: Project, onOpen: (p: Project) => void }) => {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
@@ -135,8 +135,8 @@ const Projects = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:mt-24">
-                    {projects.slice(0, 4).map((project, index) => (
-                        <ProjectCard key={project.title} project={project} index={index} onOpen={setSelectedProject} />
+                    {projects.slice(0, 4).map((project) => (
+                        <ProjectCard key={project.title} project={project} onOpen={setSelectedProject} />
                     ))}
                 </div>
 
