@@ -2,11 +2,12 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, X, ArrowRight } from "lucide-react";
+import { ExternalLink, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import Image from "next/image";
+import { projects, type Project } from "@/data/projects";
 
-const ProjectCard = ({ project, index, onOpen }: { project: any, index: number, onOpen: (p: any) => void }) => {
+const ProjectCard = ({ project, index, onOpen }: { project: Project, index: number, onOpen: (p: Project) => void }) => {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
@@ -33,10 +34,12 @@ const ProjectCard = ({ project, index, onOpen }: { project: any, index: number, 
                         y: imageY
                     }}
                 >
-                    <img
+                    <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover opacity-80"
+                        fill
+                        className="object-cover opacity-80"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-80 transition-opacity group-hover:opacity-40" />
@@ -82,7 +85,7 @@ const ProjectCard = ({ project, index, onOpen }: { project: any, index: number, 
 
 const Projects = () => {
     const containerRef = useRef(null);
-    const [selectedProject, setSelectedProject] = React.useState<any>(null);
+    const [selectedProject, setSelectedProject] = React.useState<Project | null>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start end", "end start"]
@@ -172,11 +175,13 @@ const Projects = () => {
                             </button>
 
                             <div className="flex flex-col lg:flex-row h-full">
-                                <div className="lg:w-1/2 aspect-video lg:aspect-auto overflow-hidden relative">
-                                    <img
+                                <div className="lg:w-1/2 aspect-video lg:aspect-auto overflow-hidden relative min-h-[300px]">
+                                    <Image
                                         src={selectedProject.image}
                                         alt={selectedProject.title}
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 1024px) 100vw, 50vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                                 </div>

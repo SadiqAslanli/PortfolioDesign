@@ -15,15 +15,10 @@ const navItems = [
 ];
 
 const Header = () => {
-    const [isHovered, setIsHovered] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [theme, setTheme] = useState<"light" | "dark">("light");
-    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll);
-
         const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
         if (savedTheme) {
             setTheme(savedTheme);
@@ -32,8 +27,6 @@ const Header = () => {
             setTheme("dark");
             document.documentElement.classList.add("dark");
         }
-
-        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleTheme = (e: React.MouseEvent) => {

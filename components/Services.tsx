@@ -48,9 +48,16 @@ const services = [
         color: "#6366f1",
     },
 ];
+interface Service {
+    title: string;
+    description: string;
+    image: string;
+    icon: any;
+    color: string;
+}
 
 const Services = () => {
-    const [selectedService, setSelectedService] = useState<any>(null);
+    const [selectedService, setSelectedService] = useState<Service | null>(null);
 
     return (
         <section id="services" className="py-24 relative overflow-hidden">

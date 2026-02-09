@@ -2,9 +2,11 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { type Project } from "@/data/projects";
 
-const ProjectCard = ({ project, index, onOpen }: { project: any, index: number, onOpen?: (p: any) => void }) => {
+const ProjectCard = ({ project, index, onOpen }: { project: Project, index: number, onOpen?: (p: Project) => void }) => {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
@@ -33,10 +35,12 @@ const ProjectCard = ({ project, index, onOpen }: { project: any, index: number, 
                         y: imageY
                     }}
                 >
-                    <img
+                    <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover opacity-80"
+                        fill
+                        className="object-cover opacity-80"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-80 transition-opacity group-hover:opacity-40" />

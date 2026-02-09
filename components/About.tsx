@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView, animate } from "framer-motion";
-import { Shield, Zap, Heart, Globe } from "lucide-react";
+import { Shield, Heart, Globe } from "lucide-react";
 import Image from "next/image";
 
 const Counter = ({ value, duration = 2 }: { value: string, duration?: number }) => {

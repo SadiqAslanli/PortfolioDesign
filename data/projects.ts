@@ -1,4 +1,12 @@
-export const projects = [
+export interface Project {
+    title: string;
+    category: string;
+    image: string;
+    url: string;
+    description: string;
+}
+
+export const projects: Project[] = [
     {
         title: "Proyekt 1",
         category: "Veb Sayt",

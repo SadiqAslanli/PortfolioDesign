@@ -2,16 +2,17 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, X, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, X, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence } from "framer-motion";
-import { projects } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const ProjectsPage = () => {
-    const [selectedProject, setSelectedProject] = React.useState<any>(null);
+    const [selectedProject, setSelectedProject] = React.useState<Project | null>(null);
 
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-accent/30">
@@ -91,11 +92,14 @@ const ProjectsPage = () => {
                                 </button>
 
                                 <div className="flex flex-col lg:flex-row h-full">
-                                    <div className="lg:w-1/2 aspect-video lg:aspect-auto overflow-hidden relative">
-                                        <img
+                                    <div className="lg:w-1/2 aspect-video lg:aspect-auto overflow-hidden relative min-h-[300px]">
+                                        <Image
                                             src={selectedProject.image}
                                             alt={selectedProject.title}
-                                            className="absolute inset-0 w-full h-full object-cover"
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            priority
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                                     </div>
